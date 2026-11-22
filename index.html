@@ -1249,11 +1249,10 @@ html[data-lang="en"] .site .hero h1{letter-spacing:.04em;margin-right:0}
       if(!x.el.closest('#deck')) x.el.textContent=(+x.el.dataset.to).toFixed(+x.el.dataset.dec); });
     document.title=l==='hant'?title0:(M[title0]||title0); document.documentElement.lang=HTML[l]; document.documentElement.setAttribute('data-lang',l);
     [].forEach.call(document.querySelectorAll('#lang button'),function(b){ b.classList.toggle('on',b.dataset.l===l); });
-    try{ localStorage.setItem('zt-deck-lang',l); }catch(e){}
     try{ var u=new URL(location.href); if(l==='hant') u.searchParams.delete('lang'); else u.searchParams.set('lang',l); history.replaceState(null,'',u.pathname+u.search+location.hash); }catch(e){}
     if(window.__ztGo) window.__ztGo(); }
   [].forEach.call(document.querySelectorAll('#lang button'),function(b){ b.addEventListener('click',function(e){ e.stopPropagation(); set(b.dataset.l); }); });
-  var q=null; try{ q=new URL(location.href).searchParams.get('lang'); }catch(e){} if(!q){ try{ q=localStorage.getItem('zt-deck-lang'); }catch(e){} }
+  var q=null; try{ q=new URL(location.href).searchParams.get('lang'); }catch(e){}
   set(q||'hant');
 })();
 </script>
